@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ex01",
+    "\\ex01\\include",
+    "\\ex01\\src",
+    "\\ex02",
+    "\\ex02\\src",
+    "\\ex03",
+    "\\ex03\\include",
+    "\\ex03\\obj",
+    "\\ex03\\src"
+  ],
+  "SelectedNode": "\\ex03\\Makefile",
+  "PreviewInSolutionExplorer": false
+}
