@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamarqu <anamarqu@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,16 +9,22 @@
 /*   Updated: 2023/11/06 13:04:55 by anamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../include/Dog.hpp"
-Dog::Dog() : Animal("Dog")
+#ifndef ANIMAL_HPP
+#define	ANIMAL_HPP
+
+#include <iostream>
+class Animal
 {
-	std::cout << "Dog constructor called" << std::endl;
-}
-Dog::~Dog()
-{
-	std::cout << "Dog destructor called" << std::endl;
-}
-void Dog::makeSound() const
-{
-	std::cout << "Dog guau guau" << std::endl;
-}
+public:
+	Animal();
+	Animal(const std::string& _type);
+	Animal(const Animal& other);
+	virtual ~Animal();
+	Animal& operator=(const Animal& other);
+	virtual void makeSound() const = 0;   //UNICA DIFERENCIA
+	std::string getType() const;
+protected:
+	std::string type;
+};
+
+#endif

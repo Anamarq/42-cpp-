@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamarqu <anamarqu@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,16 +9,32 @@
 /*   Updated: 2023/11/06 13:04:55 by anamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../include/Dog.hpp"
-Dog::Dog() : Animal("Dog")
+#include "../include/Cat.hpp"
+
+Cat::Cat() : Animal("Cat")
 {
-	std::cout << "Dog constructor called" << std::endl;
+	brain = new Brain();
+	std::cout << "Cat constructor called" << std::endl;
 }
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Cat destructor called" << std::endl;
+	delete brain;
 }
-void Dog::makeSound() const
+Cat::Cat(const Cat& other): Animal(other)
 {
-	std::cout << "Dog guau guau" << std::endl;
+	*this = other;
+}
+Cat& Cat::operator=(const Cat& other)
+{
+	std::cout << "Cat assignation operator called" << std::endl;
+	if (this == &other)
+		return *this;
+	type = other.type;
+	brain = new Brain(*other.brain);
+	return *this;
+}
+void Cat::makeSound() const
+{
+	std::cout << "Adorable kitty meow meow" << std::endl;
 }

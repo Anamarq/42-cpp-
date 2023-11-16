@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamarqu <anamarqu@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,16 +9,28 @@
 /*   Updated: 2023/11/06 13:04:55 by anamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../include/Dog.hpp"
-Dog::Dog() : Animal("Dog")
+#include "../include/Brain.hpp"
+Brain::Brain()
 {
-	std::cout << "Dog constructor called" << std::endl;
+	std::cout << "Brain constructor called" << std::endl;
 }
-Dog::~Dog()
+Brain::Brain(const Brain& other)
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "Brain copy constructor called" << std::endl;
+	*this = other;
 }
-void Dog::makeSound() const
+Brain::~Brain()
 {
-	std::cout << "Dog guau guau" << std::endl;
+	std::cout << "Brain destructor called" << std::endl;
+}
+Brain& Brain::operator=(const Brain& other)
+{
+	std::cout << "Brain assignation operator called" << std::endl;
+	if (this == &other)
+		return *this;
+	for (int i = 0; i < 100; ++i)
+	{
+		ideas[i] = other.ideas[i];
+	}
+	return *this;
 }

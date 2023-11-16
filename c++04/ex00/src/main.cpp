@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anamarqu <anamarqu@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/06 13:04:53 by anamarqu          #+#    #+#             */
+/*   Updated: 2023/11/06 13:04:55 by anamarqu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../include/Cat.hpp"
 #include "../include/Dog.hpp"
 #include "../include/WrongCat.hpp"
@@ -22,5 +32,6 @@ int main()
 	wrongmeta->makeSound();
 	delete wrongmeta;
 	delete i2;
+
 	return 0;
 }

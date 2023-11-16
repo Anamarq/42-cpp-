@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anamarqu <anamarqu@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,16 +9,17 @@
 /*   Updated: 2023/11/06 13:04:55 by anamarqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../include/Dog.hpp"
-Dog::Dog() : Animal("Dog")
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
+#include <iostream>
+class Brain
 {
-	std::cout << "Dog constructor called" << std::endl;
-}
-Dog::~Dog()
-{
-	std::cout << "Dog destructor called" << std::endl;
-}
-void Dog::makeSound() const
-{
-	std::cout << "Dog guau guau" << std::endl;
-}
+public:
+	Brain();
+	Brain(const Brain& other);
+	~Brain();
+	Brain& operator=(const Brain& other);
+private:
+	std::string ideas[100];
+};
+#endif
